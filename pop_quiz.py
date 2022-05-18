@@ -34,7 +34,7 @@ def main():
             answer = 'Out of tries!'
             print(answer)
 
-        results.append(prompt + answer)
+        results.append(prompt + answer + '\n')
 
     print('Done!\n')
 
@@ -42,12 +42,24 @@ def main():
     print(f'Your score: {correct_answers} out of 10')
     prompt = 'Would you like to download your certificate? '
     response = pyip.inputYesNo(prompt, caseSensitive=False)
+    print() #formatting
 
-    if response.tolower() == 'yes':
+    if response.lower() == 'yes':
         file = open('certificate.txt', 'w')
+
+        prompt = 'What is your name? '
+        name = pyip.inputStr(prompt, allowRegexes=['^[A-Z]{1}[a-z]{1,}$'], blockRegexes=['.*'])
+
+        results.insert(0, 'Name: ' + name + '\n')
+        results.insert(1, f'Score: {correct_answers} out of 10\n' )
+        results.insert(2, '\n')
+        results.insert(3, 'Quiz questions:\n')
+
+        file.writelines(results)
+        file.close()
+
     else:
-
-
+        print('Thank you for completing this pop quiz.')
 
 if __name__ == '__main__':
     main()
