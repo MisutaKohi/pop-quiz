@@ -1,0 +1,14 @@
+Name: Example
+Score: 7 out of 10
+
+Quiz questions:
+3 x 11 = Out of time!
+3 x 12 = 36
+1 x 6 = Out of tries!
+5 x 11 = 55
+10 x 6 = 60
+3 x 3 = Out of time!
+10 x 9 = 90
+10 x 9 = 90
+10 x 5 = 50
+10 x 6 = 60
